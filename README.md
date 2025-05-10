@@ -35,21 +35,6 @@ Vercel Deployment
 
     State Management: React Hooks
 
-📦 Project Structure
-
-movie-search-app/
-├── api/
-│   └── tmdb/
-│       └── route.js       # Vercel serverless function
-├── src/
-│   ├── components/        # React components
-│   ├── services/         # API service layer
-│   ├── App.jsx           # Main application
-│   └── main.jsx          # Entry point
-├── public/               # Static assets
-├── vite.config.js        # Vite configuration
-└── package.json
-
 🏁 Getting Started
 Prerequisites
 

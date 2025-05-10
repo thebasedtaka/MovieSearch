@@ -1,94 +1,45 @@
-🎬 Movie Search App with TMDB API
+# 🎬 Movie Search App
 
-React
-Vite
-Tailwind CSS
-Vercel
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
-A responsive movie search application that connects to The Movie Database (TMDB) API, featuring trending movies and search functionality.
-✨ Features
+A responsive movie search application powered by TMDB API.
 
-    🔍 Search movies by title
+## ✨ Features
+- 🔍 Real-time movie search
+- 🎬 Trending movies
+- ⚡ Fast Vite build
+- 📱 Responsive design
+- 🔒 Secure API proxy
 
-    🎬 Browse trending daily movies
+## 🚀 Live Demo
+[Live Demo](https://your-app.vercel.app)
 
-    ⚡ Fast loading with React suspense
-
-    🌙 Dark/light mode ready (via Tailwind)
-
-    🔒 Secure API calls through Vercel proxy
-
-🚀 Live Demo
-
-Vercel Deployment
-🛠️ Tech Stack
-
-    Frontend: React + Vite
-
-    Styling: Tailwind CSS
-
-    API: TMDB API
-
-    Deployment: Vercel
-
-    Routing: React Router
-
-    State Management: React Hooks
-
-🏁 Getting Started
-Prerequisites
-
-    Node.js (v16+ recommended)
-
-    TMDB API bearer token
-
-Installation
-
-    Clone the repository
-
-bash
-
-git clone https://github.com/your-username/movie-search-app.git
-cd movie-search-app
-
-    Install dependencies
-
-bash
-
+## 🛠️ Installation
+```bash
+git clone https://github.com/your-username/movie-search.git
+cd movie-search
 npm install
-
-    Create environment file
-
-bash
-
-echo "VITE_TMDB_ACCESS_TOKEN=your_tmdb_token_here" > .env.local
-
-    Run development server
-
-bash
-
+echo "VITE_TMDB_ACCESS_TOKEN=your_token" > .env.local
 npm run dev
 
-🔧 Configuration
-Environment Variables
-Variable Name	Description
-VITE_TMDB_ACCESS_TOKEN	TMDB API bearer token (frontend)
-TMDB_ACCESS_TOKEN	TMDB API bearer token (serverless function)
-Deploying to Vercel
+VITE_TMDB_ACCESS_TOKEN (for frontend)
 
-    Push your code to GitHub
+TMDB_ACCESS_TOKEN (for serverless functions)
+```
+## 🚀 Deployment
 
-    Import the repository in Vercel
+    Push to GitHub
 
-    Add environment variables in Vercel dashboard
+    Import in Vercel
+
+    Add environment variables
 
     Deploy!
 
-🤝 Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request.
-📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 Made from a guy too lazy to make a readme by Micah | GitHub

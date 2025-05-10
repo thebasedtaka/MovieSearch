@@ -12,7 +12,7 @@ export const GET = async (request) => {
   try {
     const response = await fetch(tmdbUrl, {
       headers: {
-        Authorization: `Bearer ${import.meta.env.TMDB_ACCESS_TOKEN}`,
+        Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`,
         "Content-Type": "application/json;charset=utf-8",
       },
     });

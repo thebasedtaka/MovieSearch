@@ -1,33 +1,33 @@
 export const fetchTrendingMovies = async () => {
   try {
-    const response = await fetch("/api/tmdb/trending/movie/day?language=en-US");
+    const response = await fetch(
+      `/api/tmdb?path=trending/movie/day&language=en-US`
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch trending movies from TMDB");
     }
 
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error("Error fetching trending movies:", error);
     throw error;
   }
 };
 
-export const searchMovies = async (params) => {
+export const searchMovies = async (query) => {
   try {
-    const response = await fetch(`/api/tmdb/search/movie?query=${params}`);
+    const response = await fetch(
+      `/api/tmdb?path=search/movie&query=${encodeURIComponent(query)}`
+    );
 
     if (!response.ok) {
-      throw new Error("Failed to fetch trending movies from TMDB");
+      throw new Error("Failed to search movies from TMDB");
     }
 
-    const data = await response.json();
-
-    console.log(params);
-    return data;
+    return await response.json();
   } catch (error) {
-    console.error("Error fetching trending movies:", error);
+    console.error("Error searching movies:", error);
     throw error;
   }
 };

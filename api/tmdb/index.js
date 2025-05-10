@@ -1,16 +1,16 @@
 /* eslint-env node */
 
-export default async function handler(req, res) {
-  const { url, method } = req;
+export const GET = async (request) => {
+  const { searchParams } = new URL(request.url);
+  const path = searchParams.get("path") || "";
+  const queryString = new URLSearchParams(searchParams)
+    .toString()
+    .replace("path=", "");
 
-  // Remove `/api/tmdb` from request url
-  const tmdbPath = url.replace(/^\/api\/tmdb/, "");
-
-  const tmdbUrl = `https://api.themoviedb.org/3${tmdbPath}`;
+  const tmdbUrl = `https://api.themoviedb.org/3/${path}?${queryString}`;
 
   try {
     const response = await fetch(tmdbUrl, {
-      method,
       headers: {
         Authorization: `Bearer ${import.meta.env.TMDB_ACCESS_TOKEN}`,
         "Content-Type": "application/json;charset=utf-8",
@@ -18,9 +18,16 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-    res.status(response.status).json(data);
+    return new Response(JSON.stringify(data), {
+      status: response.status,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
     console.error("TMDB Proxy Error:", error);
-    res.status(500).json({ message: "Internal Server Error" });
+    return new Response(JSON.stringify({ message: "Internal Server Error" }), {
+      status: 500,
+    });
   }
-}
+};
